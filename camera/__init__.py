@@ -26,7 +26,7 @@ def process_photo(photo_dir):
     Returns: Numpy Array
     """
     img = Image.open(str(photo_dir)).convert('L').resize((48, 48), Image.ANTIALIAS)
-    return list(img.getdata())/255.0
+    return np.array(list(img.getdata()))/255.0
 
 def show_image(data, title=None):
     """

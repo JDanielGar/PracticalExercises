@@ -17,15 +17,17 @@ def get_photo_data(objects=1, number=1):
     :Returns: Numpy array of bites
     """
     data = []
+    targets = []
     counter = 0
     while counter < objects:
         counter += 1
         input('Press some key for take the last {0} photos to a object'.format(objects-counter+1))
         for x in range(number):
             camera.take_photo('index_image')
-            data.append([camera.process_photo('./index_image.jpg'), counter])
-    data = shuffle(data)
-    return data
+            data.append([camera.process_photo('./index_image.jpg'))
+            targets.append(counter)
+    data, targets = shuffle(data, targets)
+    return data, targets
 
 def save_as_csv(data):
     """
