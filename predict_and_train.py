@@ -3,7 +3,7 @@ import numpy as np
 from get_data import get_photo_data
 
 
-X, Y = get_photo_data(2, 10)
+X, Y = get_photo_data(3, 10)
 
 X = np.array(X).astype(float)
 

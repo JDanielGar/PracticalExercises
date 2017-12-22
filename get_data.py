@@ -24,7 +24,7 @@ def get_photo_data(objects=1, number=1):
         for x in range(number):
             camera.take_photo('index_image')
             data.append(camera.process_photo('./index_image.jpg'))
-            targets.append(counter)
+            targets.append(counter-1)
     data, targets = shuffle(data, targets)
     return data, targets
 
