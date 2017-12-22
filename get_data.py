@@ -5,7 +5,6 @@ import camera
 import numpy as np
 from sklearn.utils import shuffle
 
-
 def get_photo_data(objects=1, number=1):
     """
     Uses camera module to take image and process images
@@ -24,7 +23,7 @@ def get_photo_data(objects=1, number=1):
         input('Press some key for take the last {0} photos to a object'.format(objects-counter+1))
         for x in range(number):
             camera.take_photo('index_image')
-            data.append([camera.process_photo('./index_image.jpg'))
+            data.append(camera.process_photo('./index_image.jpg'))
             targets.append(counter)
     data, targets = shuffle(data, targets)
     return data, targets
