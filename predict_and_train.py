@@ -1,3 +1,7 @@
+"""
+Daniel García
+22-12-17
+"""
 import tensorflow as tf
 import numpy as np
 from get_data import get_photo_data
@@ -18,9 +22,15 @@ for i in range(N):
     T[i, Y[i]] = 1
 
 def init_weights(shape):
+    """
+    Init the synaptic weights with tensorflow
+    """
     return tf.Variable(tf.random_normal(shape, stddev=0.01))
 
 def forward(X, W1, b1, W2, b2):
+    """
+    Operation to predict
+    """
     Z = tf.nn.sigmoid(tf.matmul(X, W1) + b1)
     return tf.matmul(Z,W2)+b2
 
@@ -54,3 +64,6 @@ for i in range(1000):
 
 save_model = tf.train.Saver()
 save_model.save(sess, 'model.ckpt')
+
+# Remember, to predict you need to load the model and if is only one row of data you need to transpose it.
+# Artificial Machine
