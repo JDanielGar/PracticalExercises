@@ -14,7 +14,7 @@ X = np.array(X).astype(float)
 
 N = len(Y)
 D = 2304
-M = 3523
+M = 200
 K = 3
 
 T = np.zeros((N, K))
